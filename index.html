@@ -5,18 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>andreisesbreno</title>
     <link rel="stylesheet" href="cssfiles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
 
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        const aboutSection = document.querySelector('.about');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        if (aboutSection) {
+            observer.observe(aboutSection);
+        }
     
+       
+        const profileLinks = document.querySelectorAll('.proflinks div');
+        profileLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
+            });
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+    
+       
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    });
+    </script>
+
+
 <body>
     <header>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
+                
+                <li><a href="about.html">About</a></li>
             </ul>
         </nav>
     </header>
-    
-            
+
 
     <section class="about" id="about">
         <div class="about-image">
@@ -24,38 +79,18 @@
         </div>
         
         <div class="about-text">
-            
             <h2><strong>Andrei Justyn Sesbreno</strong></h2>
-
-            <p>
-                Currently an IT Student at St. Dominic College of Asia.
+            <p>Currently an IT Student at St. Dominic College of Asia and a type of person who would continue
+                to improve as time pass by.
             </p>
-
         </div>
-
     </section>
 
-    <section class = "proflinks" id="proflink">
-
+    <section class="proflinks" id="proflink">
 
         <div>
-            <a href = "asesbreno441@gmail.com">My Email</a>
+            <a href="mailto:asesbreno441@gmail.com">Contact me via Email</a>
         </div>
-
-
-        <div>            
-            <imglink>
-                <strong><a href = https://www.linkedin.com/in/andrei-justyn-sesbreno-529451362> <img src="linkedin.png" style="width:42px;height:42px;" > </a></strong>
-            </imglink>
-        </div>
-
-
     </section>
-
-
-
-
-
 </body>
 </html>
-
