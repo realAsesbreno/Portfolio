@@ -3,16 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>andreisesbreno</title>
+    <title>Andrei Sesbreño | Home </title>
     <link rel="stylesheet" href="cssfiles/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
-
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        
         const aboutSection = document.querySelector('.about');
         
         const observer = new IntersectionObserver((entries) => {
@@ -28,7 +25,6 @@
             observer.observe(aboutSection);
         }
     
-       
         const profileLinks = document.querySelectorAll('.proflinks div');
         profileLinks.forEach(link => {
             link.addEventListener('mouseenter', function() {
@@ -41,7 +37,6 @@
             });
         });
     
-       
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 if (this.getAttribute('href').startsWith('#')) {
@@ -58,20 +53,18 @@
             });
         });
     });
-    </script>
-
+</script>
 
 <body>
     <header>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                
-                <li><a href="about.html">About</a></li>
+                <li><a href="techstack.html">Tech Stacks</a></li>
+                <li><a href="about.html"> About </a></li>
             </ul>
         </nav>
     </header>
-
 
     <section class="about" id="about">
         <div class="about-image">
@@ -83,13 +76,6 @@
             <p>Currently an IT Student at St. Dominic College of Asia and a type of person who would continue
                 to improve as time pass by.
             </p>
-        </div>
-    </section>
-
-    <section class="proflinks" id="proflink">
-
-        <div>
-            <a href="mailto:asesbreno441@gmail.com">Contact me via Email</a>
         </div>
     </section>
 </body>

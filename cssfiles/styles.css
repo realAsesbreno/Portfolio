@@ -1,4 +1,3 @@
-
 /* FOR index.html */
 * {
     margin: 0;
@@ -167,11 +166,9 @@ html {
         gap: 15px;
     }
 }
-
 /* FOR INDEX.HTML ENDS HERE */
 
-
-/* About and TechStack */
+/* TechStack */
 * {
     margin: 0;
     padding: 0;
@@ -222,7 +219,6 @@ h1:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
-
 
 .tech-stack {
     display: flex;
@@ -299,7 +295,6 @@ h1:hover {
 .tech-card:nth-child(3) { transition-delay: 0.3s; }
 .tech-card:nth-child(4) { transition-delay: 0.4s; }
 
-
 @media (max-width: 768px) {
     .tech-stack {
         gap: 20px;
@@ -319,7 +314,26 @@ h1:hover {
     }
 }
 
-/* More about me button haha */
+/* contacts button haha */
+.dropdown-content {
+    text-align: center; 
+}
+
+.dropdown-section {
+    text-align: center; 
+    margin-left: auto; 
+    margin-right: auto;
+    max-width: 90%; 
+}
+
+.dropdown-section h3,
+.dropdown-section p {
+    text-align: center; 
+}
+
+.social-links {
+    justify-content: center; 
+}
 
 .about-me-dropdown {
     margin: 50px auto;
@@ -358,11 +372,10 @@ h1:hover {
 
 .dropdown-content {
     display: none;
-    background: rgba(0, 108, 158, 0.9);
+    background: rgba(26, 92, 122, 0.9);
     border-radius: 0 0 8px 8px;
     padding: 20px;
     margin-top: 5px;
-    text-align: left;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     animation: fadeIn 0.3s ease-out;
 }
@@ -382,7 +395,7 @@ h1:hover {
 }
 
 .dropdown-section h3 {
-    color: #1037b6;
+    color: #253158;
     margin-bottom: 10px;
 }
 
@@ -398,25 +411,18 @@ h1:hover {
     margin-top: 15px;
 }
 
-.social-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 15px;
-}
-
 .social-link {
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     text-decoration: none;
     transition: all 0.3s ease;
-    width: 60px; 
-    height: 60px; 
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.9);
-    padding: 10px; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .social-link:hover {
@@ -426,21 +432,69 @@ h1:hover {
 }
 
 .social-link img {
-    max-width: 100%; 
-    max-height: 100%; 
-    width: auto; 
-    height: auto; 
-    object-fit: contain; 
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
-
 
 .social-link:hover img {
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
 
-
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* about.html */
+.about-me-page {
+    background-color: #335577;
+    color: #333;
+    line-height: 1.6;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+}
+        
+.about-me-page h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+        
+.about-me-section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+        
+.about-me-title {
+    color: #3498db;
+    margin: 20px 0 10px;
+    font-size: 1.5rem;
+}
+        
+.about-me-content p {
+    margin-bottom: 15px;
+}
+        
+.about-me-content ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+        
+.about-me-highlight {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-left: 4px solid #3498db;
+    margin: 20px 0;
 }

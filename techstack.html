@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrei Sesbreño | Tech Stack </title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cssfiles/styles.css">
+</head>
+<body>
+    <h1>Tech Stacks</h1>
+    
+    <div class="tech-stack">
+        <div class="tech-card">
+            <img src="cprogramming.png" alt="C Language" width="60" height="60">
+            <div class="tech-name">C Language</div>
+        </div>
+        
+        <div class="tech-card">
+            <img src="javaprogramming.png" alt="Java Programming" width="60" height="60">
+            <div class="tech-name">Java Programming</div>
+        </div>
+        
+        <div class="tech-card">
+            <img src="androidstudio.png" alt="Android Studio" width="60" height="60">
+            <div class="tech-name">Android Studio</div>
+        </div>
+        
+        <div class="tech-card">
+            <img src="oracleapex.jpg" alt="Oracle APEX" width="60" height="60">
+            <div class="tech-name">Oracle APEX</div>
+        </div>
+    </div>
+
+    <div class="about-me-dropdown">
+        <button class="dropdown-btn">Contacts!</button>
+        <div class="dropdown-content">
+            <div class="dropdown-section">
+                <h3>Accounts</h3>
+                <div class="social-links">
+                    <a href="https://github.com/realAsesbreno" target="_blank" class="social-link">
+                        <img src="githubicon.png" alt="GitHub" width="40">
+                    </a>
+                    <a href="https://linkedin.com/in/andrei-justyn-sesbreno-529451362" target="_blank" class="social-link">
+                        <img src="linkedin.png" alt="LinkedIn" width="40">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const techCards = document.querySelectorAll('.tech-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            techCards.forEach(card => {
+                observer.observe(card);
+            });
+            
+            const dropdownBtn = document.querySelector('.dropdown-btn');
+            dropdownBtn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -3,92 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Tech Stack</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>ABOUT ME</title>
     <link rel="stylesheet" href="cssfiles/styles.css">
 </head>
-<body>
-    <h1>My Technical Skills</h1>
-    
-    <div class="tech-stack">
-        <div class="tech-card">
-            <img src="cprogramming.png" alt="C Language" width="60" height="60">
-            <div class="tech-name">C Language</div>
-        </div>
-        
-        <div class="tech-card">
-            <img src="javaprogramming.png" alt="Java Programming" width="60" height="60">
-            <div class="tech-name">Java Programming</div>
-        </div>
-        
-        <div class="tech-card">
-            <img src="androidstudio.png" alt="Android Studio" width="60" height="60">
-            <div class="tech-name">Android Studio</div>
-        </div>
-        
-        <div class="tech-card">
-            <img src="oracleapex.jpg" alt="Oracle APEX" width="60" height="60">
-            <div class="tech-name">Oracle APEX</div>
-        </div>
-    </div>
-
-    <div class="about-me-dropdown">
-        <button class="dropdown-btn">More about me</button>
-        <div class="dropdown-content">
-            <div class="dropdown-section">
-                <h3>Educational Background</h3>
-                <p>IT Student at St. Dominic College of Asia (Currently!)</p>
-                <p>Specializing in Software Development</p>
-                <p>Expected Graduation: 2027</p>
-            </div>
-            <div class="dropdown-section">
-                <h3>Hobbies & Interests</h3>
-                <p>Playing Video Games</p>
-                <p>Watching Movies and Television Series</p>
-            </div>
-            <div class="dropdown-section">
-                <h3>Accounts</h3>
-                <div class="social-links">
-                    <a href="https://github.com/realAsesbreno" target="_blank" class="social-link">
-                        <img src="githubicon.png" alt="GitHub" width="40">
-                    </a>
-                    <a href="https://linkedin.com/in/andrei-justyn-sesbreno-529451362" target="_blank" class="social-link">
-                        <img src="linkedin.png" alt="LinkedIn" width="40">
-                    </a>
-                </div>
+<body class="about-me-page">
+    <div class="about-me-section">
+        <div class="about-me-content">
+            <h2 class="about-me-title">ABOUT ME</h2>
+            <p>
+                Hello, My name is Andrei Justyn Sesbreño, an IT Student in St. Dominic College of Asia. I tend to be very passionate about video games 
+                on how it is developed and documented during its development phase. And being able to see how the reaction of the people who get to try out
+                these games is a joy to see. And I would love to also be involved when you want to hire me.
+                
+                An aspiring Web Designer, Game Developer, and Hardware Engineer. I hope to be featured and involved in your future projects
+                and work alongside you.
+            </p>
+            
+            <div class="about-me-highlight">
+                <p>"One day, young hawk, thou shalt sail beneath the silvered moon."</p>
             </div>
         </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            const techCards = document.querySelectorAll('.tech-card');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            techCards.forEach(card => {
-                observer.observe(card);
-            });
-            
-            
-            const dropdownBtn = document.querySelector('.dropdown-btn');
-            dropdownBtn.addEventListener('click', function() {
-                this.classList.toggle('active');
-                const content = this.nextElementSibling;
-                if (content.style.display === 'block') {
-                    content.style.display = 'none';
-                } else {
-                    content.style.display = 'block';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
