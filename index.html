@@ -6,6 +6,30 @@
     <title>Andrei Sesbreño | Home </title>
     <link rel="stylesheet" href="cssfiles/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Can't find the "body" background in my css file :((((( */
+        body {
+            background: linear-gradient(-45deg, #253749, #4883c7, #2a4b75, #184c8b);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
 </head>
 
 <script>
@@ -56,10 +80,23 @@
 </script>
 
 <body>
+    <div class = "box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
                 <li><a href="techstack.html">Tech Stacks</a></li>
                 <li><a href="about.html"> About </a></li>
             </ul>
@@ -77,6 +114,36 @@
                 to improve as time pass by.
             </p>
         </div>
+
+        <div class="about-me-dropdown">
+            <button class="dropdown-btn">Contacts!</button>
+            <div class="dropdown-content">
+                <div class="dropdown-section">
+                    <h3>Accounts</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/realAsesbreno" target="_blank" class="social-link">
+                            <img src="githubicon.png" alt="GitHub" width="40">
+                        </a>
+                        <a href="https://linkedin.com/in/andrei-justyn-sesbreno-529451362" target="_blank" class="social-link">
+                            <img src="linkedin.png" alt="LinkedIn" width="40">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <script>
+        const dropdownBtn = document.querySelector('.dropdown-btn');
+        dropdownBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const content = this.nextElementSibling;
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
