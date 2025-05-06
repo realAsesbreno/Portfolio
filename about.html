@@ -28,25 +28,30 @@
         }
     </style>
 </head>
+<header>
+    <nav>
+        <div class="container flex-lg-column">
+        <ul class="navbar-nav ms-auto flex-lg-column text-lg-center">
+                <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+               </li>
+               <li class="nav-item">
+                <a class="nav-link" href ="tech-stack.html"> Tech Stack</a>
+               </li>
+               <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+               </li>
+              
+        </ul>
+        </div>
+
+</header>
 <body class="about-me-page">
-    <div class="box">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+
     <div class="about-me-section">
         <div class="about-me-content">
             <h2 class="about-me-title">ABOUT ME</h2>
             <p>
-                Hello, My name is Andrei Justyn Sesbreño, an IT Student in St. Dominic College of Asia. As of now I have no job experiences yet,
-                however, I prepared myself to the point that I'm very confident that I can do a great job nonetheless.
                 I tend to be very passionate about video games 
                 on how it is developed and documented during its development phase. And being able to see how the reaction of the people who get to try out
                 these games is a joy to see. And I would love to also be involved when you want to hire me.
@@ -72,7 +77,6 @@
             const highlight = document.querySelector('.about-me-highlight');
             const highlightText = highlight.querySelector('p');
             
-            // Animation on page load
             setTimeout(() => {
                 highlight.style.opacity = '1';
                 highlight.style.transform = 'translateY(0)';
@@ -80,7 +84,7 @@
             }, 500);
             
             
-            // Typewriter effect (optional)
+
             const quote = highlightText.textContent;
             highlightText.textContent = '';
             let i = 0;
@@ -94,6 +98,17 @@
             }, 50);
         });
     </script>
-    
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 </body>
 </html>

@@ -521,6 +521,14 @@ h1:hover {
 }
 
 /* about.html */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', Arial, sans-serif;
+}
+
+
 .about-me-page {
     background-color: #335577;
     color: #333;
@@ -528,7 +536,6 @@ h1:hover {
     padding: 40px 20px;
     max-width: 800px;
     margin: 0 auto;
-    font-family: 'Arial', sans-serif;
 }
         
 .about-me-page h1 {
@@ -558,7 +565,6 @@ h1:hover {
 }
         
 .about-me-content p {
-    font-family: 'Quicksand', sans-serif;
     font-weight: 500; 
     font-size: 1.1rem;
     line-height: 1.7;
@@ -572,7 +578,6 @@ h1:hover {
 }
         
 .about-me-highlight p {
-    font-family: 'Nunito', sans-serif;
     font-style: italic;
     font-weight: 600;
 }
