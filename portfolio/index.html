@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrei Sesbreño | Home </title>
+    <link rel="stylesheet" href="cssfiles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Can't find the "body" background in my css file :((((( */
+        body {
+            background: linear-gradient(-45deg, #253749, #4883c7, #2a4b75, #184c8b);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const aboutSection = document.querySelector('.about');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        if (aboutSection) {
+            observer.observe(aboutSection);
+        }
+    
+        const profileLinks = document.querySelectorAll('.proflinks div');
+        profileLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
+            });
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+    
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+<body>
+
+
+
+
+    <header> <!--navbar -->
+        <nav>
+            <div class="container flex-lg-column">
+            <ul class="navbar-nav ms-auto flex-lg-column text-lg-center">
+                    <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                   </li>
+                   <li class="nav-item">
+                    <a class="nav-link" href ="tech-stack.html"> Tech Stack</a>
+                   </li>
+                   <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                   </li>
+                  
+            </ul>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+
+
+
+
+    <section class="about" id="about">
+        <div class="about-image">
+            <img src="photoofme.jpg" alt="">
+        </div>
+        
+        <div class="about-text">
+            <h2><strong>Andrei Justyn Sesbreno</strong></h2>
+            <p>Currently an IT Student at St. Dominic College of Asia and a type of person who would continue
+                to improve as time pass by.
+            </p>
+        </div>
+
+        <div class="about-me-dropdown">
+            <button class="dropdown-btn">Contacts!</button>
+            <div class="dropdown-content">
+                <div class="dropdown-section">
+                    <h3>Accounts</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/realAsesbreno" target="_blank" class="social-link">
+                            <img src="githubicon.png" alt="GitHub" width="40">
+                        </a>
+                        <a href="https://linkedin.com/in/andrei-justyn-sesbreno-529451362" target="_blank" class="social-link">
+                            <img src="linkedin.png" alt="LinkedIn" width="40">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class = "box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <script>
+        const dropdownBtn = document.querySelector('.dropdown-btn');
+        dropdownBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const content = this.nextElementSibling;
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

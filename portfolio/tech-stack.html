@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrei Sesbreño | Tech Stack </title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cssfiles/styles.css">
+    <style>
+        /* Can't find the "body" background in my css file :((((( */
+        body {
+            background: linear-gradient(-45deg, #253749, #4883c7, #2a4b75, #184c8b);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<header>
+    <nav>
+        <div class="container flex-lg-column">
+        <ul class="navbar-nav ms-auto flex-lg-column text-lg-center">
+                <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+               </li>
+               <li class="nav-item">
+                <a class="nav-link" href ="tech-stack.html">Tech Stack</a>
+               </li>
+               <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+               </li>
+              
+        </ul>
+        </div>
+</header>
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <h1>Tech Stacks</h1>
+    
+    <div class="tech-stack">
+        <div class="tech-card">
+            <img src="cprogramming.png" alt="C Language" width="60" height="60">
+            <div class="tech-name">C Language</div>
+        </div>
+        
+        <div class="tech-card">
+            <img src="javaprogramming.png" alt="Java Programming" width="60" height="60">
+            <div class="tech-name">Java Programming</div>
+        </div>
+        
+        <div class="tech-card">
+            <img src="androidstudio.png" alt="Android Studio" width="60" height="60">
+            <div class="tech-name">Android Studio</div>
+        </div>
+        
+        <div class="tech-card">
+            <img src="oracleapex.jpg" alt="Oracle APEX" width="60" height="60">
+            <div class="tech-name">Oracle APEX</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const techCards = document.querySelectorAll('.tech-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            techCards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

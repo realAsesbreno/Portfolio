@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrei Sesbreño | About Me </title>
+    <link rel="stylesheet" href="cssfiles/styles.css">
+    <style>
+        /* Can't find the "body" background in my css file :((((( */
+        body {
+            background: linear-gradient(-45deg, #253749, #4883c7, #2a4b75, #184c8b);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<header>
+    <nav>
+        <div class="container flex-lg-column">
+        <ul class="navbar-nav ms-auto flex-lg-column text-lg-center">
+                <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+               </li>
+               <li class="nav-item">
+                <a class="nav-link" href ="tech-stack.html"> Tech Stack</a>
+               </li>
+               <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+               </li>
+              
+        </ul>
+        </div>
+
+</header>
+<body class="about-me-page">
+
+    <div class="about-me-section">
+        <div class="about-me-content">
+            <h2 class="about-me-title">ABOUT ME</h2>
+            <p>
+                I tend to be very passionate about video games 
+                on how it is developed and documented during its development phase. And being able to see how the reaction of the people who get to try out
+                these games is a joy to see. And I would love to also be involved when you want to hire me.
+            </p>
+
+
+            <p>
+                An aspiring Web Designer, Game Developer, and Hardware Engineer.
+                I hope to be featured and involved in your future projects to further improve my
+                knowledge and have a wonderful experience at the same time.
+            </p>
+            
+            <div class="about-me-highlight">
+                <p>"One day, young hawk, thou shalt sail beneath the silvered moon."</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const highlight = document.querySelector('.about-me-highlight');
+            const highlightText = highlight.querySelector('p');
+            
+            setTimeout(() => {
+                highlight.style.opacity = '1';
+                highlight.style.transform = 'translateY(0)';
+                highlight.querySelector('p').style.opacity = '1';
+            }, 500);
+            
+            
+
+            const quote = highlightText.textContent;
+            highlightText.textContent = '';
+            let i = 0;
+            const typeWriter = setInterval(() => {
+                if (i < quote.length) {
+                    highlightText.textContent += quote.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typeWriter);
+                }
+            }, 50);
+        });
+    </script>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+</body>
+</html>
